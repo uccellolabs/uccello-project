@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function() {
+    $domain = uccello()->useMultiDomains() ? uccello()->getLastOrDefaultDomain()->slug : null;
+    $route = ucroute('uccello.home', $domain);
+    return redirect($route);
 });
+
+Auth::routes();
