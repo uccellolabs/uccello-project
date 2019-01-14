@@ -1,10 +1,11 @@
 {
-    "name": "laravel/laravel",
+    "name": "uccello/project",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "The Uccello Core based on the Laravel Framework.",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "uccello"
     ],
     "license": "MIT",
     "require": {
