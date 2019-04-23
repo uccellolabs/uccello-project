@@ -12,9 +12,17 @@
 */
 
 Route::get('/', function() {
+    return view('welcome');
+});
+
+Route::get('/uccello', function() {
     $domain = uccello()->useMultiDomains() ? uccello()->getLastOrDefaultDomain()->slug : null;
     $route = ucroute('uccello.home', $domain);
     return redirect($route);
 });
 
 Auth::routes();
+
+// If you deactivate multi domains, this route 
+// will be in conflict with 'uccello.home' route
+Route::get('/home', 'HomeController@index')->name('home');

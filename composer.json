@@ -60,7 +60,7 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
             "@php artisan jwt:secret --ansi",
-            "@php artisan uccello:publish --ansi"
+            "@php artisan uccello:publish --force --ansi"
         ]
     }
 }
