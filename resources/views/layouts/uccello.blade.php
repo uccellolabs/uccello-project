@@ -1,7 +1,7 @@
 @extends('uccello::layouts.app')
 
 @if (auth()->check())
-    @section('user-name') {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}@endsection
+    @section('user-name') {{ auth()->user()->name }}@endsection
     @section('user-email') {{ auth()->user()->email }}@endsection
 @endif
 
