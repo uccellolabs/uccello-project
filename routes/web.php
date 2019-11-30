@@ -11,11 +11,14 @@
 |
 */
 
-Route::get('/', function() {
-    return view('welcome');
-});
+// Decomment if you want to make a front-office and use Uccello as a back-office
+// Route::get('/', function() {
+//     return view('welcome');
+// });
 
-Route::get('/uccello', function() {
+
+// Route::get('/uccello', function() { // Use this line if you want to make a front-office and use Uccello as a back-office
+Route::get('/', function() { // Use this line if you want only use Uccello without front-office
     $domain = uccello()->useMultiDomains() ? uccello()->getLastOrDefaultDomain()->slug : null;
     $route = ucroute('uccello.home', $domain);
     return redirect($route);
@@ -23,6 +26,6 @@ Route::get('/uccello', function() {
 
 Auth::routes();
 
-// If you deactivate multi domains, this route 
+// If you deactivate multi domains, this route
 // will be in conflict with 'uccello.home' route
 Route::get('/home', 'HomeController@index')->name('home');
