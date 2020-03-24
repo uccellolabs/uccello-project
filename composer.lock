@@ -5072,16 +5072,16 @@
         },
         {
             "name": "uccello/uccello",
-            "version": "1.0.0-rc1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/uccellolabs/uccello.git",
-                "reference": "b7082d905215f46ba12be5b4719602bf618ff578"
+                "reference": "31785ca6fb1d7deff53dccf40fd5c4da6dacf0ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/uccellolabs/uccello/zipball/b7082d905215f46ba12be5b4719602bf618ff578",
-                "reference": "b7082d905215f46ba12be5b4719602bf618ff578",
+                "url": "https://api.github.com/repos/uccellolabs/uccello/zipball/31785ca6fb1d7deff53dccf40fd5c4da6dacf0ec",
+                "reference": "31785ca6fb1d7deff53dccf40fd5c4da6dacf0ec",
                 "shasum": ""
             },
             "require": {
