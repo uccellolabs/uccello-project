@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Uccello\Core\Models\Connection;
 
 class LoginController extends Controller
 {
@@ -26,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -71,5 +74,20 @@ class LoginController extends Controller
                 'password.required' => trans('uccello::auth.error.password_required'),
             ]
         );
+    }
+
+    /**
+    * The user has been authenticated.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @param  mixed  $user
+    * @return mixed
+    */
+    protected function authenticated(Request $request, $user)
+    {
+        Connection::create([
+            'user_id' => $user->id,
+            'datetime' => Carbon::now(),
+        ]);
     }
 }
